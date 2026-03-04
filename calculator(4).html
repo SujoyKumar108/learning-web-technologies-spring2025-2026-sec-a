@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manual Logic Calculator</title>
+</head>
+
+<body>
+
+<fieldset align="center">
+<legend><h1>Calculator</h1></legend>
+<input type="text" id="display" size="10px" disabled>
+<br><br>
+
+<button onclick="clearAll()">C</button>
+<button onclick="setOperator('/')">/</button>
+<button onclick="setOperator('*')">*</button>
+<button onclick="setOperator('-')">-</button>
+<br><br>
+
+<button onclick="addNumber('7')">7</button>
+<button onclick="addNumber('8')">8</button>
+<button onclick="addNumber('9')">9</button>
+<button onclick="setOperator('+')">+</button>
+<br><br>
+
+<button onclick="addNumber('4')">4</button>
+<button onclick="addNumber('5')">5</button>
+<button onclick="addNumber('6')">6</button>
+<button onclick="calculate()">=</button>
+<br><br>
+
+<button onclick="addNumber('1')">1</button>
+<button onclick="addNumber('2')">2</button>
+<button onclick="addNumber('3')">3</button>
+<button onclick="addNumber('0')">0</button>
+</fieldset>
+<script>
+
+let display = document.getElementById("display");
+
+let firstNumber = "";
+let secondNumber = "";
+let operator = "";
+let isSecond = false;
+
+// Add number
+function addNumber(num) {
+    if (isSecond === false) 
+    {
+        firstNumber = firstNumber + num;
+        display.value = firstNumber;
+    } 
+    else 
+    {
+        secondNumber = secondNumber + num;
+        display.value = secondNumber;
+    }
+}
+
+// Set operator
+function setOperator(op) {
+    operator = op;
+    isSecond = true;
+}
+
+// Calculate manually
+function calculate() {
+
+    let num1 = Number(firstNumber);
+    let num2 = Number(secondNumber);
+    let result = 0;
+
+    if (operator === "+") {
+        result = num1 + num2;
+    }
+    else if (operator === "-") {
+        result = num1 - num2;
+    }
+    else if (operator === "*") {
+        result = num1 * num2;
+    }
+    else if (operator === "/") {
+        result = num1 / num2;
+    }
+
+    display.value = result;
+
+    // Reset for next calculation
+    firstNumber = result.toString();
+    secondNumber = "";
+    operator = "";
+    isSecond = false;
+}
+
+// Clear everything
+function clearAll() {
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    isSecond = false;
+    display.value = "";
+}
+
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"d61ace1a7a5c47e3831d343de077b36a","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
