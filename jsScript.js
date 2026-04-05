@@ -82,4 +82,22 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
         return;
     }
 
+    let tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+
+    tableBody.innerHTML += `
+        <tr>
+            <td>${username}</td>
+            <td>${password}</td>
+            <td>${email}</td>
+            <td>${dob}</td>
+            <td>${id}</td>
+            <td>${gender}</td>
+            <td>${dept}</td>
+            <td>${address}</td>
+        </tr>
+    `;
+
+    // Clear form after submission
+    document.getElementById("myForm").reset();
+
 });
