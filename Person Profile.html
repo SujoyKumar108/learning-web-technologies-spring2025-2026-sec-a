@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login form</title>
+</head>
+
+<body>
+
+<form id="myForm" method="post" action="Tic.html">
+    <fieldset>
+        <legend>Sign up</legend>
+
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="username" name="username" placeholder="username"></td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+
+            <tr>
+                <td>DOB</td>
+                <td><input type="date" id="dob" name="dob"></td>
+            </tr>
+
+            <tr>
+                <td>ID</td>
+                <td><input type="number" id="id" name="id"></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </td>
+            </tr>
+
+            <tr>
+                <td>ABC</td>
+                <td>
+                    <input type="checkbox" name="abc" value="1"> Item-1
+                    <input type="checkbox" name="abc" value="2"> Item-2
+                    <input type="checkbox" name="abc" value="3"> Item-3
+                </td>
+            </tr>
+
+            <tr>
+                <td>DEPT</td>
+                <td>
+                    <select id="dept" name="dept">
+                        <option value="">Select</option>
+                        <option value="CSE">CSE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="COE">COE</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Image</td>
+                <td>
+                    <input type="file" id="image" name="image">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea id="address" name="address"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+
+    </fieldset>
+</form>
+
+<script src="jsScript.js"></script>
+
+</body>
+</html>
