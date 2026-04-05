@@ -83,9 +83,10 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     }
 
     let tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+    let rowColor = (id > 50) ? "green" : "red";
 
     tableBody.innerHTML += `
-        <tr>
+        <tr style="background-color: ${rowColor}">
             <td>${username}</td>
             <td>${password}</td>
             <td>${email}</td>
