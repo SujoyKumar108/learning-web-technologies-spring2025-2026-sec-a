@@ -14,8 +14,17 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     // Username
     if (username === "") {
         alert("Username is required");
-        // event.preventDefault();
+        event.preventDefault();
         return;
+    }
+
+    for (let i = 0; i < username.length; i++) {
+        let ch = username[i];
+        if (!(ch >= 'A' && ch <= 'Z') && !(ch >= 'a' && ch <= 'z')) {
+            alert("Only letters allowed");
+            event.preventDefault();
+            return;
+        }
     }
 
     // Password
