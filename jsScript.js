@@ -1,4 +1,5 @@
-document.getElementById("myForm").addEventListener("submit", function(event) {
+let form = document.getElementById("myForm")
+form.addEventListener("submit", function(event) {
 
     event.preventDefault();
     let username = document.getElementById("username").value.trim();
@@ -101,4 +102,8 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     // Clear form after submission
     document.getElementById("myForm").reset();
 
+});
+
+form.addEventListener("reset", function() {
+    alert("Reset succesfully");
 });
